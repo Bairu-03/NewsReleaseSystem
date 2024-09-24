@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+#header{
+    height: fit-content;
+    background-size: cover;
+    background-image: url("../img/image.jpg");
+    padding-left: 20px;
+    line-height: 80px;
+    text-shadow : rgba(255,255,255,0.8) 0 5px 6px, rgba(255,255,255,0.5) 1px 3px 3px;
+}
+
+ul{
+    padding-top: 20px;
+    padding-left: 40px;
+}
