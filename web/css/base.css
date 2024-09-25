@@ -1,19 +1,99 @@
 *{
     margin: 0;
     padding: 0;
-    border: 0;
 }
 
 #header{
     height: fit-content;
     background-size: cover;
     background-image: url("../img/image.jpg");
-    padding-left: 20px;
+    padding-left: 30px;
     line-height: 80px;
     text-shadow : rgba(255,255,255,0.8) 0 5px 6px, rgba(255,255,255,0.5) 1px 3px 3px;
 }
 
 ul{
-    padding-top: 20px;
+    padding-top: 5px;
     padding-left: 40px;
+}
+
+li {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #C0E0E9;
+    width: 180px;
+    margin-right: 60px;
+    margin-top: 10px;
+    float: left;
+    line-height: 25px;
+    padding-left: 10px;
+}
+
+.nttitle{
+    width: 315px;
+    height: 120px;
+    background: url("../img/opt_name.gif") left 5px top 8px no-repeat;
+    margin: 100px auto auto;
+    padding-left: 20px;
+    padding-top: 10px;
+    line-height: 25px;
+    border: 1px solid #1384D6;
+    box-shadow: 10px 10px 5px -4px #1384D6;
+}
+
+.input {
+    max-width: 190px;
+    height: 30px;
+    margin-top: 10px;
+    background-color: #05060f0a;
+    border-radius: .5rem;
+    padding: 0 1rem;
+    border: 2px solid transparent;
+    font-size: 1rem;
+    transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+}
+.input:hover, .input:focus, .input-group:hover .input {
+    outline: none;
+    border-color: #05060f;
+}
+.input-group:hover .label, .input:focus {
+    color: #05060fc2;
+}
+
+#addsend{
+    margin-top: 13px;
+    margin-left: 60px;
+}
+
+#reset{
+    margin-top: 13px;
+    margin-left: 30px;
+}
+
+#add{
+    margin-top: 15px;
+    margin-left: 40px;
+}
+
+.aButton {
+    text-decoration: none;
+}
+
+.niceButton{
+    display: inline-block;
+    padding: 5px 18px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color:#000000;
+    background-color: #C0DEFA;
+    border: none;
+    border-radius: 3px;
+}
+    .niceButton:hover{
+    background-color: #80bcf5;
+}
+.niceButton:active{
+    background-color: #1384D6;
 }

@@ -8,13 +8,13 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.List;
+import java.io.PrintWriter;
 
 /**
- * 新闻类型列表控制器
+ * 新闻类型添加控制器
  */
-@WebServlet("/NewsTypeController")
-public class NewsTypeController extends HttpServlet {
+@WebServlet("/NewsTypeAddController")
+public class NewsTypeAddController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     // 依赖关系
@@ -22,16 +22,25 @@ public class NewsTypeController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // 调用
-        List<NewsType> newsTypeList = service.findAll();
-        // 保存到请求对象中
-        request.setAttribute("list", newsTypeList);
-        // 把信息转发给视图展示
-        request.getRequestDispatcher("newstypelist.jsp").forward(request, response);
+        PrintWriter out = response.getWriter();
+        String typename = request.getParameter("typename");
+        int nResult = service.add(new NewsType(typename));
+
+        String msg = "";
+        if (nResult == 1) {
+            msg = "添加成功";
+        } else if (nResult == 0) {
+            msg = "添加失败";
+        } else {
+            msg = "该新闻类型已存在";
+        }
+
+        // 提示并跳转到列表信息显示页
+        out.println("<script>alert('" + msg + "');location='NewsTypeController';</script>");
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doGet(request, response);
     }
 }

@@ -12,4 +12,18 @@ public interface NewsTypeDao {
      * @return 所有的新闻类型信息
      */
     List<NewsType> findAll();
+
+    /**
+     * 根据新闻类型名获得指定对象
+     * @param typename 新闻类型名
+     * @return 新闻类型对象
+     */
+    NewsType findByName(String typename);
+
+    /**
+     * 添加新闻类型
+     * @param nt 新闻类型对象
+     * @return 数据库中受影响的行数
+     */
+    int save(NewsType nt);
 }

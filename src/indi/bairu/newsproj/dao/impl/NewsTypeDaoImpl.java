@@ -15,6 +15,10 @@ import java.util.List;
  * 新闻类型数据访问层的实现类
  */
 public class NewsTypeDaoImpl implements NewsTypeDao {
+    /**
+     * 获得所有的新闻类型的信息
+     * @return 所有的新闻类型信息
+     */
     @Override
     public List<NewsType> findAll() {
         List<NewsType> newsTypeList = new ArrayList<>();
@@ -51,5 +55,66 @@ public class NewsTypeDaoImpl implements NewsTypeDao {
             dbutils.closeConn(conn);
         }
         return newsTypeList;
+    }
+
+    /**
+     * 根据新闻类型名获得指定对象
+     * @param typename 新闻类型名
+     * @return 新闻类型对象
+     */
+    @Override
+    public NewsType findByName(String typename) {
+        NewsType nt = null;
+        DBUtils dbutils = DBUtils.getInstance();
+
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        try {
+            conn = dbutils.getConn();
+            String sql = "select * from newstype where typename = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, typename);
+            rs = pstmt.executeQuery();
+            if (rs.next()) {
+                nt = new NewsType();
+                nt.setTypeid(rs.getInt("typeid"));
+                nt.setTypename(rs.getString("typename"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            dbutils.closeRs(rs);
+            dbutils.closePstmt(pstmt);
+            dbutils.closeConn(conn);
+        }
+        return nt;
+    }
+
+    /**
+     * 添加新闻类型
+     * @param nt 新闻类型对象
+     * @return 数据库中受影响的行数
+     */
+    @Override
+    public int save(NewsType nt) {
+        int nResult = 0;
+        DBUtils dbutils = DBUtils.getInstance();
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        try {
+            conn = dbutils.getConn();
+            String sql = "insert into newstype(typename) values(?)";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, nt.getTypename());
+            nResult = pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            dbutils.closePstmt(pstmt);
+            dbutils.closeConn(conn);
+        }
+        return nResult;
     }
 }
