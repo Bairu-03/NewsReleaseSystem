@@ -26,4 +26,18 @@ public interface NewsTypeDao {
      * @return 数据库中受影响的行数
      */
     int save(NewsType nt);
+
+    /**
+     *根据新闻类型编号来获取指定的新闻类型
+     *
+     *
+     * */
+    NewsType findById(int typeid);
+    /**
+     *
+     *
+     *
+     * */
+    int update(NewsType nt);
+
 }

@@ -19,4 +19,16 @@ public interface NewsTypeService {
      * @return 状态 1 - 成功 | 0 - 失败 | -1 - 已存在该新闻类型
      */
     int add(NewsType nt);
+    /**
+     *根据新闻类型编号来获取指定的新闻类型
+     *
+     *
+     * */
+    NewsType findById(int typeid);
+    /**
+     *修改新闻信息
+     *
+     * @return返回行数
+     * */
+    int update(NewsType nt);
 }

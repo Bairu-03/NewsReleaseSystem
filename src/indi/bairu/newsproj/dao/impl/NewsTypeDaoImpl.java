@@ -117,4 +117,57 @@ public class NewsTypeDaoImpl implements NewsTypeDao {
         }
         return nResult;
     }
+
+    @Override
+    public NewsType findById(int typeid) {
+        //声明新闻类型对象
+        NewsType nt = null;
+        //获得数据库工具类的对象
+        DBUtils dbutils = DBUtils.getInstance();
+        //声明数据的相关对象
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try {
+            conn = dbutils.getConn();
+            String sql = "select * from newstype where typeid = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, typeid);
+            rs = pstmt.executeQuery();
+            if (rs.next()) {
+                nt = new NewsType();
+                nt.setTypeid(rs.getInt("typeid"));
+                nt.setTypename(rs.getString("typename"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            dbutils.closeRs(rs);
+            dbutils.closePstmt(pstmt);
+            dbutils.closeConn(conn);
+        }
+        return nt;
+    }
+
+    @Override
+    public int update(NewsType nt) {
+        int nResult = 0;
+        DBUtils dbutils = DBUtils.getInstance();
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        try {
+            conn = dbutils.getConn();
+            String sql = "update newstype set typename = ? where typeid = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, nt.getTypename());
+            pstmt.setInt(2, nt.getTypeid());
+            nResult = pstmt.executeUpdate();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            dbutils.closePstmt(pstmt);
+            dbutils.closeConn(conn);
+        }
+        return nResult;
+    }
 }

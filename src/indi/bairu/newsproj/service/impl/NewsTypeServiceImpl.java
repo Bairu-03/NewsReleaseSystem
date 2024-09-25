@@ -43,4 +43,25 @@ public class NewsTypeServiceImpl implements NewsTypeService {
         }
         return -1; // 已存在该新闻类型
     }
+
+    @Override
+    public NewsType findById(int typeid) {
+        return dao.findById(typeid);
+    }
+
+    @Override
+    public int update(NewsType nt) {
+        //判断修改成的新闻类型名是否已存在
+        NewsType nType = dao.findByName(nt.getTypename());
+        if (nType == null){
+            int nResult = dao.update(nt);
+            if (nResult > 0){
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+        //已存在
+        return -1;
+    }
 }
