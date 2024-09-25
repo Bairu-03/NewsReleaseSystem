@@ -18,7 +18,7 @@
   </div>
   <input type="submit" value="添加新闻类型" class="niceButton" id="add" onclick="window.location.href='newstypeadd.jsp';"/>
   <ul>
-    <%--@elvariable id="list" type="indi.bairu.newsproj.controller.NewsTypeController"--%>
+    <%--@elvariable id="list" type="indi.bairu.newsproj"--%>
     <c:forEach var="nt" items="${list}">
       <li>${nt.typename} &nbsp;&nbsp; <a class="aButton" href="NewTypeGetByidController?typeid=${nt.typeid}">修改</a> &nbsp;&nbsp; <a class="aButton" href="#">删除</a></li>
     </c:forEach>
