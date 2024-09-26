@@ -20,7 +20,13 @@
   <ul>
     <%--@elvariable id="list" type="indi.bairu.newsproj"--%>
     <c:forEach var="nt" items="${list}">
-      <li>${nt.typename} &nbsp;&nbsp; <a class="aButton" href="NewTypeGetByidController?typeid=${nt.typeid}">修改</a> &nbsp;&nbsp; <a class="aButton" href="#">删除</a></li>
+      <li>
+          ${nt.typename}
+          &nbsp;&nbsp;
+          <a class="aButton" href="NewsTypeGetByidController?typeid=${nt.typeid}">修改</a>
+          &nbsp;&nbsp;
+          <a class="aButton" href="NewsTypeDeleteController?typeid=${nt.typeid}">删除</a>
+      </li>
     </c:forEach>
   </ul>
 </body>

@@ -12,7 +12,7 @@
   <link href="css/base.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<form action="NewTypeUpdateController" method="post">
+<form action="NewsTypeUpdateController" method="post">
   <div class="nttitle">
     <div>修改类型</div>
     <div>类型名:

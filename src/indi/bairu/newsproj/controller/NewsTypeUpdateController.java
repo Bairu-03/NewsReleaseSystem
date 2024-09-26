@@ -13,8 +13,8 @@ import java.io.PrintWriter;
 /**
  *修改新闻类型的控制器
  * */
-@WebServlet("/NewTypeUpdateController")
-public class NewTypeUpdateController extends HttpServlet {
+@WebServlet("/NewsTypeUpdateController")
+public class NewsTypeUpdateController extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private NewsTypeService service=new NewsTypeServiceImpl();
 

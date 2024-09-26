@@ -1,7 +1,10 @@
 package indi.bairu.newsproj.service.impl;
 
+import indi.bairu.newsproj.dao.NewsDao;
 import indi.bairu.newsproj.dao.NewsTypeDao;
+import indi.bairu.newsproj.dao.impl.NewsDaoImpl;
 import indi.bairu.newsproj.dao.impl.NewsTypeDaoImpl;
+import indi.bairu.newsproj.domain.News;
 import indi.bairu.newsproj.domain.NewsType;
 import indi.bairu.newsproj.service.NewsTypeService;
 
@@ -13,6 +16,7 @@ import java.util.List;
 public class NewsTypeServiceImpl implements NewsTypeService {
     // 依赖关系
     private NewsTypeDao dao = new NewsTypeDaoImpl();
+    private NewsDao nDao = new NewsDaoImpl();
 
     /**
      * 获得所有的新闻类型的信息
@@ -62,6 +66,25 @@ public class NewsTypeServiceImpl implements NewsTypeService {
             }
         }
         //已存在
+        return -1;
+    }
+
+    /**
+     * 删除指定的新闻类型
+     * @param typeid 新闻类型编号
+     * @return 状态 1 - 成功 | 0 - 失败 | -1 - 还有属于该类型的新闻
+     */
+    @Override
+    public int delete(int typeid) {
+        List<News> newsList = nDao.findByTypeid(typeid);
+        if (newsList.size() == 0){
+            int nResult = dao.delete(typeid);
+            if (nResult > 0){
+                return 1;
+            } else {
+                return 0;
+            }
+        }
         return -1;
     }
 }

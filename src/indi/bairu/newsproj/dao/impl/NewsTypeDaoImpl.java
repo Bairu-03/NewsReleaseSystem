@@ -170,4 +170,25 @@ public class NewsTypeDaoImpl implements NewsTypeDao {
         }
         return nResult;
     }
+
+    @Override
+    public int delete(int typeid) {
+        int nResult = 0;
+        DBUtils dbutils = DBUtils.getInstance();
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        try {
+            conn = dbutils.getConn();
+            String sql = "delete from newstype where typeid = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, typeid);
+            nResult = pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            dbutils.closePstmt(pstmt);
+            dbutils.closeConn(conn);
+        }
+        return nResult;
+    }
 }

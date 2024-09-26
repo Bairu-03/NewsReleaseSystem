@@ -27,17 +27,10 @@ public interface NewsTypeDao {
      */
     int save(NewsType nt);
 
-    /**
-     *根据新闻类型编号来获取指定的新闻类型
-     *
-     *
-     * */
+
     NewsType findById(int typeid);
-    /**
-     *
-     *
-     *
-     * */
+
     int update(NewsType nt);
 
+    int delete(int typeid);
 }

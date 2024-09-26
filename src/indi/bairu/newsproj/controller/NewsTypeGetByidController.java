@@ -11,8 +11,8 @@ import java.io.IOException;
 /**
  *根据新闻类型编号获得指定新闻类型对象的控制器
  * */
-@WebServlet("/NewTypeGetByidController")
-public class NewTypeGetByidController extends HttpServlet {
+@WebServlet("/NewsTypeGetByidController")
+public class NewsTypeGetByidController extends HttpServlet {
     private static final long serialVersionUID = 1L;
     //依赖关系
     private NewsTypeService service = new NewsTypeServiceImpl();
