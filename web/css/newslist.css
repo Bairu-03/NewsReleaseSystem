@@ -1,0 +1,55 @@
+table {
+    width: 200px;
+    margin-left: 100px;
+    margin-top: 50px;
+    border-collapse: collapse;
+}
+th {
+    text-align: left;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 16px;
+    background-color: #C0DEFA;
+}
+td {
+    border: 1px solid #ddd;
+    padding-left: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: left;
+    font-size: 14px;
+    background-color: #ECF7FB;
+}
+
+#newscenterlogo{
+    height: 35px;
+    padding-left: 20px;
+    background: url("../img/blue_bar.png") left top 6px no-repeat;
+}
+
+#newstypebar{
+    width: 630px;
+}
+#newstypebar ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-left: -31px;
+    align-content: space-around;
+}
+#newstypebar li{
+    margin-left: 15px;
+}
+
+#typeMgBtn{
+    margin: -44px auto auto 645px;
+    display: flex;
+}
+
+#newslist{
+    display: flex;
+}
+#newslist ul{
+    clear: both;
+}

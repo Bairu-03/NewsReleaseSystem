@@ -3,6 +3,7 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 .idea/libraries/Tomcat_lib.xml
+/web/test.jsp
 
 ### Eclipse ###
 .apt_generated

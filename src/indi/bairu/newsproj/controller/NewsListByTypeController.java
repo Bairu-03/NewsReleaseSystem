@@ -25,9 +25,11 @@ public class NewsListByTypeController extends HttpServlet {
     {
         String strId = request.getParameter("typeid");
         List<News> newsList = service.findByTypeid(Integer.parseInt(strId));
-        List<NewsType> ntList = ntService.findAll();
+        List<NewsType> newsTypeList = ntService.findAll();
+        List<NewsType> ntList = ntService.findAllIncludeNewsList();
+        request.setAttribute("ntlist", ntList);
         request.setAttribute("newsList", newsList);
-        request.setAttribute("newsTypeList", ntList);
+        request.setAttribute("newsTypeList", newsTypeList);
         request.getRequestDispatcher("newslistbytype.jsp").forward(request, response);
     }
 

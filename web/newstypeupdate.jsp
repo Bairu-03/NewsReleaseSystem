@@ -9,6 +9,7 @@
 <html>
 <head>
   <title>修改新闻类型</title>
+  <link href="css/common.css" rel="stylesheet" type="text/css">
   <link href="css/base.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>

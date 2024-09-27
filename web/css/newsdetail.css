@@ -1,0 +1,29 @@
+#box{
+    margin: 20px auto;
+    width: 787px;
+}
+
+#newscenterlogo{
+    height: 35px;
+    padding-left: 20px;
+    background: url("../img/blue_bar.png") left top 6px no-repeat;
+}
+
+#newstypebar{
+    width: 630px;
+}
+#newstypebar ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-left: -31px;
+    align-content: space-around;
+}
+#newstypebar li{
+    margin-left: 15px;
+}
+
+#typeMgBtn{
+    margin: -44px auto auto 645px;
+    display: flex;
+}

@@ -24,6 +24,8 @@ public class IndexController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<News> newsList = service.findAll();
         List<NewsType> newsTypeList = ntService.findAll();
+        List<NewsType> ntList = ntService.findAllIncludeNewsList();
+        request.setAttribute("ntlist", ntList);
         request.setAttribute("newsList", newsList);
         request.setAttribute("newsTypeList", newsTypeList);
 
