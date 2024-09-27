@@ -174,3 +174,17 @@
     font-size:1px;
     line-height:0;
 }
+#sidenav{
+    width:200px;
+    height: 300px;
+    /*margin-left: 150px;*/
+    /*margin-top: -90px;*/
+    border:1px solid #80bcf5;
+}
+#sidenav h2{
+    background-color: #80bcf5;
+}
+#sidenav ul{
+    background-color: #1384D6;
+    border: 1px solid blue;
+}

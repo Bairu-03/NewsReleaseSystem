@@ -14,6 +14,12 @@ public interface NewsTypeDao {
     List<NewsType> findAll();
 
     /**
+     * 获得所有的新闻类型的信息
+     * @return 所有的新闻类型信息
+     */
+    List<NewsType> findAllIncludeNewsList();
+
+    /**
      * 根据新闻类型名获得指定对象
      * @param typename 新闻类型名
      * @return 新闻类型对象

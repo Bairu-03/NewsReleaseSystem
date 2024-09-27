@@ -13,11 +13,13 @@ public interface NewsTypeService {
      */
     List<NewsType> findAll();
 
+
     /**
-     * 新增新闻类型
-     * @param nt 新闻类型对象
-     * @return 状态 1 - 成功 | 0 - 失败 | -1 - 已存在该新闻类型
+     * 获得所有的新闻类型的信息
+     * @return 所有的新闻类型信息
      */
+    List<NewsType> findAllIncludeNewsList();
+
     int add(NewsType nt);
 
     /**

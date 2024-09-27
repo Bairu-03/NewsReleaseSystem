@@ -8,6 +8,7 @@ import indi.bairu.newsproj.domain.News;
 import indi.bairu.newsproj.domain.NewsType;
 import indi.bairu.newsproj.service.NewsTypeService;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -26,6 +27,11 @@ public class NewsTypeServiceImpl implements NewsTypeService {
     @Override
     public List<NewsType> findAll() {
         return dao.findAll();
+    }
+
+    @Override
+    public List<NewsType> findAllIncludeNewsList() {
+        return dao.findAllIncludeNewsList();
     }
 
     /**

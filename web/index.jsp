@@ -59,5 +59,19 @@
 
   </div>
 
+  <div id="sidenav">
+    <!-- 循环所有的新闻类型 -->
+    <c:forEach items="${ntlist}" var="nt">
+      <div >
+        <h2>${nt.typename}</h2>
+        <ul>
+          <c:forEach items="${nt.newsList}" var="ns">
+            <li><a href="NewsDetailController?newsid=${ns.newsid}">${ns.title}</a></li>
+          </c:forEach>
+        </ul>
+      </div>
+    </c:forEach>
+  </div>
+
 </body>
 </html>

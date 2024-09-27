@@ -1,4 +1,5 @@
 package indi.bairu.newsproj.domain;
+import java.util.List;
 
 /**
  * 新闻类型实体类
@@ -6,6 +7,16 @@ package indi.bairu.newsproj.domain;
 public class NewsType {
     private int typeid; // 新闻类型编号
     private String typename; // 新闻类型名
+    //一对多的关系
+    //该分类下包含的所有的新闻的集合
+    private List<News> newsList;
+    public List<News> getNewsList() {
+        return newsList;
+    }
+
+    public void setNewsList(List<News> newsList) {
+        this.newsList = newsList;
+    }
 
     public NewsType() {
     }
