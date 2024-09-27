@@ -12,6 +12,8 @@ public class News {
     private String newscontent;
     // 新闻类型编号
     private int typeid;
+    // 新闻类型名
+    private String typename;
     // 新闻发布时间
     private String createdate;
 
@@ -55,6 +57,14 @@ public class News {
 
     public void setTypeid(int typeid) {
         this.typeid = typeid;
+    }
+
+    public String getTypename() {
+        return typename;
+    }
+
+    public void setTypename(String typename) {
+        this.typename = typename;
     }
 
     public String getCreatedate() {

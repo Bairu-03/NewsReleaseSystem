@@ -17,10 +17,10 @@
     <h2>新闻类型管理</h2>
   </div>
   <input type="submit" value="添加新闻类型" class="niceButton" id="add" onclick="window.location.href='newstypeadd.jsp';"/>
-  <ul>
-    <%--@elvariable id="list" type="indi.bairu.newsproj"--%>
+  <ul id="ntlistul">
+    <%--@elvariable id="list" type="indi.bairu.newsproj.controller.NewsTypeController"--%>
     <c:forEach var="nt" items="${list}">
-      <li>
+      <li id="ntlistli">
           ${nt.typename}
           &nbsp;&nbsp;
           <a class="aButton" href="NewsTypeGetByidController?typeid=${nt.typeid}">修改</a>

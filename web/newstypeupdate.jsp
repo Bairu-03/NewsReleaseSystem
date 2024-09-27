@@ -16,7 +16,7 @@
   <div class="nttitle">
     <div>修改类型</div>
     <div>类型名:
-      <%--@elvariable id="nt" type="indi.bairu.newsproj"--%>
+      <%--@elvariable id="nt" type="indi.bairu.newsproj.controller.NewsTypeGetByidController"--%>
       <input type="text" name="typename" value="${nt.typename}" class="input"/>
       <input type="hidden" name="typeid" value="${nt.typeid}" class="input"/>
     </div>

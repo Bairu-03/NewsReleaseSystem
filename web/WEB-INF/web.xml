@@ -9,6 +9,6 @@
     </listener>
 
     <welcome-file-list>
-        <welcome-file>NewsTypeController</welcome-file>
+        <welcome-file>IndexController</welcome-file>
     </welcome-file-list>
 </web-app>

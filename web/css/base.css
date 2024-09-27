@@ -12,12 +12,12 @@
     text-shadow : rgba(255,255,255,0.8) 0 5px 6px, rgba(255,255,255,0.5) 1px 3px 3px;
 }
 
-ul{
+#ntlistul {
     padding-top: 5px;
     padding-left: 40px;
 }
 
-li {
+#ntlistli {
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #C0E0E9;
@@ -96,4 +96,65 @@ li {
 }
 .niceButton:active{
     background-color: #1384D6;
+}
+
+#box{
+    margin: 0 auto;
+    width: 787px;
+}
+
+#ntlbt{
+    height: 35px;
+    background: url("../img/blue_bar.png") left top 6px no-repeat;
+}
+
+#newslogo{
+    margin-left: 16px;
+}
+
+#newsbg{
+    width: 787px;
+    height: 28px;
+    margin-top: -23px;
+    background: url("../img/blue_bar.png") left top no-repeat;
+}
+
+#navbar{
+    height: 35px;
+    padding-top: 15px;
+    padding-left: 20px;
+    border-bottom: 1px solid gray;
+}
+
+#navbar ul{
+    list-style: none;
+}
+
+#navbar li{
+    float: left;
+    margin-right: 20px;
+}
+
+#navbar a{
+    text-decoration: none;
+}
+#navbar a:hover{
+    text-decoration: underline;
+}
+
+#newslist ul{
+    clear: both;
+}
+
+#newslist a{
+    text-decoration: none;
+}
+#newslist a:hover{
+    text-decoration: underline;
+}
+
+#newslist{
+    padding-left: 25px;
+    padding-top: 15px;
+
 }

@@ -1,13 +1,14 @@
-package indi.bairu.newsproj.dao;
+package indi.bairu.newsproj.service;
 
 import indi.bairu.newsproj.domain.News;
-
 import java.util.List;
 
 /**
- * 新闻的数据访问层接口
+ * 新闻业务逻辑接口
  */
-public interface NewsDao {
+public interface NewsService {
+    List<News> findAll();
+
     /**
      * 查询指定的新闻类型下包含的新闻信息
      *
@@ -17,14 +18,8 @@ public interface NewsDao {
     List<News> findByTypeid(int typeid);
 
     /**
-     * 查询所有新闻
-     *
-     * @return 所有新闻
-     */
-    List<News> findAll();
-
-    /**
      * 根据新闻编号获得指定新闻详情
+     *
      * @param newsid 新闻编号
      * @return 新闻信息
      */
