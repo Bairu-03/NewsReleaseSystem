@@ -30,7 +30,7 @@ public class NewsTypeAddController extends HttpServlet {
         if (nResult == 1) {
             msg = "添加成功";
         } else if (nResult == 0) {
-            msg = "添加失败";
+            msg = "添加失败，输入不能为空";
         } else {
             msg = "该新闻类型已存在";
         }

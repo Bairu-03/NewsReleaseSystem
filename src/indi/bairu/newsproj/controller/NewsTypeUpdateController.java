@@ -30,7 +30,7 @@ public class NewsTypeUpdateController extends HttpServlet {
         if(nResult==1){
             msg="修改成功";
         } else if (nResult==0) {
-            msg="修改失败";
+            msg="修改失败，输入不能为空";
         }else {
             msg="新闻类名已经存在";
         }

@@ -9,6 +9,7 @@ import indi.bairu.newsproj.domain.NewsType;
 import indi.bairu.newsproj.service.NewsTypeService;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * 新闻类型业务逻辑层接口实现类
@@ -34,6 +35,9 @@ public class NewsTypeServiceImpl implements NewsTypeService {
      */
     @Override
     public int add(NewsType nt) {
+        if(Objects.equals(nt.getTypename(), "")){
+            return 0; // 失败
+        }
         // 查询该新增的新闻类型是否存在
         NewsType nType = dao.findByName(nt.getTypename());
         if (nType == null){
@@ -55,6 +59,9 @@ public class NewsTypeServiceImpl implements NewsTypeService {
 
     @Override
     public int update(NewsType nt) {
+        if(Objects.equals(nt.getTypename(), "")){
+            return 0;
+        }
         //判断修改成的新闻类型名是否已存在
         NewsType nType = dao.findByName(nt.getTypename());
         if (nType == null){
