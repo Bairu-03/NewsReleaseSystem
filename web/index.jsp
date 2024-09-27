@@ -32,8 +32,14 @@
           </li>
         </c:forEach>
       </ul>
+      <div class="clearfloat"></div>
+      <div id="typeMg">
+        <form action="NewsTypeController" method="post">
+          <input type="submit" value="管理新闻类型" class="niceButton"/>
+        </form>
+      </div>
     </div>
-
+    <hr>
     <div id="newslist">
       <ul>
         <!--遍历新闻-->

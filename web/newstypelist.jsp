@@ -17,6 +17,9 @@
     <h2>新闻类型管理</h2>
   </div>
   <input type="submit" value="添加新闻类型" class="niceButton" id="add" onclick="window.location.href='newstypeadd.jsp';"/>
+  <form action="IndexController" method="post">
+    <input type="submit" value="返回新闻首页" class="niceButton" id="back"/>
+  </form>
   <ul id="ntlistul">
     <%--@elvariable id="list" type="indi.bairu.newsproj.controller.NewsTypeController"--%>
     <c:forEach var="nt" items="${list}">

@@ -75,6 +75,16 @@
     margin-left: 40px;
 }
 
+#back{
+    margin-left: 180px;
+    margin-top: -28.4px;
+}
+
+#typeMg{
+    margin: -25px auto auto 630px;
+    float: left;
+}
+
 .aButton {
     text-decoration: none;
 }
@@ -99,7 +109,7 @@
 }
 
 #box{
-    margin: 0 auto;
+    margin: 20px auto;
     width: 787px;
 }
 
@@ -120,10 +130,10 @@
 }
 
 #navbar{
-    height: 35px;
+    width: 630px;
     padding-top: 15px;
+    padding-bottom: 10px;
     padding-left: 20px;
-    border-bottom: 1px solid gray;
 }
 
 #navbar ul{
@@ -156,5 +166,11 @@
 #newslist{
     padding-left: 25px;
     padding-top: 15px;
+}
 
+.clearfloat{
+    clear:both;
+    height:0;
+    font-size:1px;
+    line-height:0;
 }
