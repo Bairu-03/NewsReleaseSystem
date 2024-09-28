@@ -32,7 +32,7 @@
       </ul>
       <div class="clearfloat"></div>
       <div id="typeMgBtn">
-        <form action="NewsTypeController" method="post">
+        <form action="admin.jsp" method="post">
           <input type="submit" value="管理新闻类型" class="niceButton"/>
         </form>
       </div>
